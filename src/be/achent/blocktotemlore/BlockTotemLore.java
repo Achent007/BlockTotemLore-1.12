@@ -5,7 +5,6 @@ import be.achent.blocktotemlore.Event.Event;
 
 import java.util.ArrayList;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -44,27 +43,6 @@ public class BlockTotemLore extends JavaPlugin {
   public void saveDefaultsMessages() {
     this.messages.saveDefaultConfig();
   }
-  
-  public static boolean is18() {
-    String version;
-    try {
-      version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
-    } catch (ArrayIndexOutOfBoundsException e) {
-      return false;
-    } 
-    return version.equals("v1_8_R3");
-  }
-  
-  public static boolean is116() {
-    String version;
-    try {
-      version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
-    } catch (ArrayIndexOutOfBoundsException e) {
-      return false;
-    } 
-    return (Integer.parseInt(version.split("_")[1]) >= 16);
-  }
-
 
   public static BlockTotemLore getPlugin() {
 	return plugin;
